@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-inline-size: 1400px;
+    margin-inline: auto;
+}
+
+body {
+    font-family: 'Constantia', serif;
+    font-size: 1.2rem;
+    min-block-size: 100dvh;
+}
+
+main {
+    justify-content: center;
+    align-content: center;
+    margin-block: 20px;
+    text-align: center;
+    padding: 10px;
+    inline-size: fit-content;
+    margin-inline: auto; /* This centers the box */
+}
+
+h1 {
+    margin-block-start: 50px;
+}
+
+button {
+    margin: 10px;
+}
