@@ -17,20 +17,23 @@ body {
 main {
     justify-content: center;
     align-content: center;
-    margin-block: 20px;
     text-align: center;
     padding: 10px;
     inline-size: fit-content;
     margin-inline: auto; /* This centers the box */
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
 }
 
 h1 {
-    margin-block-start: 50px;
     color: white;
 }
 
 button {
     margin: 10px;
+    max-width: fit-content;
+    margin-inline: auto;
 }
 
 .border {
@@ -38,6 +41,7 @@ button {
     border-radius: 15px;
     padding: 20px;
     background-color: #203a44;
+    height: fit-content;
 }
 
 .title {
@@ -45,7 +49,10 @@ button {
     border-radius: 15px;
     padding: 20px;
     background-color: #203a44;
-    margin: 20px;
-    width: 600px;
+    margin-block-end: 600px;
+    margin-block-start: 100px;
+    width: 400px;
     margin-inline: auto;
+    display: grid;
+    grid-template-rows: auto auto auto;
 }

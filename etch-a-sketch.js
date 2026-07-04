@@ -1,11 +1,13 @@
 const container = document.querySelector("#container");
-const boxAttribute = "border: solid 1px black; background: white; height: 50px; width: 50px";
 let randomOn = false;
 let color = 'black';
 let gridAmount = 16
+const gridRoot = Math.sqrt(gridAmount)
 const gridAmountSquared = Math.pow(gridAmount, 2);
-const dimensions = gridAmount * 50;
-container.setAttribute("style", "display: flex; flex-wrap: wrap; margin-inline: auto; width:"+ dimensions + "px");
+const dimensions = 800;
+let boxSize = dimensions / gridAmount
+let boxAttribute = "border: solid 1px black; background: white; flex: 0 0 auto; width:"+ boxSize + "px; height:"+ boxSize + "px";
+container.setAttribute("style", "display: flex; flex-wrap: wrap; margin: 10px; margin-inline: auto; width:"+ dimensions + "px; height:"+ dimensions + "px"); // 
 const btn = document.querySelector("#button");
 const randomButton = document.querySelector("#randomizer");
 randomButton.textContent = "Turn on Random Colors";
@@ -20,8 +22,10 @@ btn.addEventListener("click", () => {
         console.log(gridAmount)
     }
     let newBox = Math.pow(gridAmount, 2)
-    let newDimensions = gridAmount * 50;
-    container.setAttribute("style", "display: flex; flex-wrap: wrap; margin-inline: auto; width:"+ newDimensions + "px");
+    boxSize = dimensions / gridAmount
+    boxAttribute = "border: solid 1px black; background: white; flex: 0 0 auto; width:"+ boxSize + "px; height:"+ boxSize + "px";
+    // let newDimensions = gridAmount * 50;
+    // container.setAttribute("style", "display: flex; flex-wrap: wrap; margin-inline: auto; width:"+ newDimensions + "px; height:"+ newDimensions + "px");
     console.log(newBox)
     createBox(newBox)
 });
@@ -45,6 +49,8 @@ function chooseColor() {
 
 function createBox(num) {
     container.replaceChildren()
+    console.log(boxSize)
+    console.log(boxAttribute)
     for (let i = num; i > 0; i--) {
         const box = document.createElement("div");
         box.setAttribute("style", boxAttribute);
